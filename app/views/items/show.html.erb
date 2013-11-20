@@ -1,0 +1,15 @@
+<h1><%= @item.title %></h1>
+<div id="main">
+	  <%= image_tag @item.item_image.url(:medium), style: 'float:right; vertical-align:middle; display:inline-block'%>
+	  <div id="show_item">
+		  <h2>Title</h2>
+		  <p><%= @item.title %></p>
+		  <br><br> 
+		  <h2>Description</h2>
+		  <p><%= @item.description %></p>
+		  <br><br>
+		  <h2>Price</h2>
+		  <p><%= number_to_currency(@item.price) %></p>
+		  <br><br>
+	  </div>
+</div>

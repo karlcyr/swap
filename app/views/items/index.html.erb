@@ -1,0 +1,20 @@
+<h1>Inventory</h1>
+<div id="main"> 
+	<table>
+	  <tr>
+	    <th>Title</th>
+	    <th>Description</th>
+	    <th>Price</th>
+	    <th>Item Image</th>
+	  </tr>
+	 
+	  <% @items.each do |item| %>
+	    <tr>
+	      <td><%= item.title %></td>
+	      <td><%= item.description %></td>
+	      <td><%= number_to_currency(item.price.to_s.to_d) %></td>
+	      <td><%= image_tag item.item_image.url(:thumb) %></td>
+	    </tr>
+	  <% end %>
+	</table>
+</div>

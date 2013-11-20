@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Swap</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= yield %>
+<br>
+	<div id="global_footer" class='td-center'>
+		<%= link_to 'Home', welcome_index_path %>
+        	<%= link_to "Item Directory", items_path %>
+		<%= link_to "Add New Item", new_item_path %>
+	</div>
+</body>
+</html>
