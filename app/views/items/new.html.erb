@@ -11,7 +11,19 @@
     		</ul>
   	    </div>
   	  <% end %>
-
+<style>
+  .drop_zone {
+	background-color:white;
+	color:black;
+	border-radius:10px;
+	border: 2px dashed;
+	padding: 120px;
+	text-align:center;
+  }
+</style>
+	<div style="background-color:white; border-radius:10px; padding:15px; float:right;"> 
+        <div id="drop_zone" class="drop_zone">Drop files here</div>
+	</div>
 	  <p>
 	    <%= f.label :title %><br>
 	    <%= f.text_field :title %>
@@ -29,11 +41,49 @@
 
 	  <p>
 	    <%= f.label :item_image %><br>
-	    <%= f.file_field :item_image %>
+	    <%= f.file_field :item_image %>	
 	  </p>
-		 
-	  <p>
-	    <%= f.submit %>
-	  </p>
-	<% end %>
+
+
+<style>
+  .thumb {
+    height: 200px;
+    border: 1px solid #000;
+  }
+</style>
+
+<output id="list"></output>
+
+<script>
+  function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+      // Only process image files.
+    if (files[0].type.match('image.*')) {
+    
+
+	    var reader = new FileReader();
+
+	    // Closure to capture the file information.
+	    reader.onload = (function(theFile) {
+		return function(e) {
+		  // Render thumbnail.
+		  var drop_zone = document.getElementById('drop_zone');
+		  drop_zone.innerHTML = ['<img class="thumb" src="', e.target.result,
+				    '" title="', escape(theFile.name), '"/>'].join('');
+		  document.getElementById('drop_zone').style.padding="20px";
+		  document.getElementById('drop_zone').style.border="none";
+		};
+	      })(files[0]);
+
+	      // Read in the image file as a data URL.
+	      reader.readAsDataURL(files[0]);
+     }
+  }
+
+  document.getElementById('post_item_image').addEventListener('change', handleFileSelect, false);
+</script>			 
+		  <p>
+		    <%= f.submit %>
+		  </p>
+		<% end %>
 </div>
