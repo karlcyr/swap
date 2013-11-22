@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+	before_filter :authenticate_user, :only => [:new, :show]
+
 	def new
 		@item = Item.new
 	end
@@ -21,7 +23,7 @@ class ItemsController < ApplicationController
 		@items = Item.all
 	end
 
-      private
+    private
 	def post_params
 		params.require(:post).permit(:title, :description, :price, :item_image)
 	end

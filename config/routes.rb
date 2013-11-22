@@ -7,7 +7,9 @@ Swap::Application.routes.draw do
   root 'welcome#index'
  
   resources :items
-  
+  resources :users 
+  resources :sessions
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

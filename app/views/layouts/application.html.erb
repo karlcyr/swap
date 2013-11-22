@@ -10,9 +10,10 @@
 <%= yield %>
 <br>
 	<div id="global_footer" class='td-center'>
-		<%= link_to 'Home', welcome_index_path %>
-        	<%= link_to "Item Directory", items_path %>
-		<%= link_to "Add New Item", new_item_path %>
+		<%= link_to 'Home', welcome_index_path %> ||
+        <%= link_to "Item Directory", items_path %> ||
+		<%= link_to "Add New Item", new_item_path %> ||
+		<%= link_to "Sign up!", new_user_path %>
 	</div>
 </body>
 </html>

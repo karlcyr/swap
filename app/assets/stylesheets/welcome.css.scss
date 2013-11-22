@@ -48,7 +48,7 @@ body h1 {
 }
 
 #global_footer {
-	width: 500px;
+		width: 500px;
         margin-left: auto;
         margin-right: auto;
         border-radius:25px;
@@ -60,6 +60,9 @@ body h1 {
         text-align: center; 	
 }
 
+#global_footer a {
+		color: green;
+}
 /*Generic Classes*/
 .td-center      { text-align: center; }
 .center-div     { margin-left: auto; margin-right: auto; }

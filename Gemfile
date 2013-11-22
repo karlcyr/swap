@@ -44,4 +44,6 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Project-specific Gems
 gem 'paperclip'
+gem 'bcrypt-ruby'
