@@ -7,6 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if authenticated? %>
+	<div style="background-color:black; color:white; width:auto">welcome <%= current_user.email %>!</div>
+<% end %>
+ 
 <%= yield %>
 <br>
 	<div id="global_footer" class='td-center'>

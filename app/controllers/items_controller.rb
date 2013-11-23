@@ -3,12 +3,15 @@ class ItemsController < ApplicationController
 
 	def new
 		@item = Item.new
+		@ownership = Ownership.new
 	end
 
 	def create
 		@item = Item.new(post_params)
+		itemsave = @item.save
+		@ownership = Ownership.new(:userid => current_user.id, :itemid => @item.id, :public => true, :swaptype => 0)
 
-		if @item.save
+		if itemsave && @ownership.save
 			redirect_to @item
 		else
 			render 'new'
