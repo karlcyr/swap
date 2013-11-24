@@ -2,68 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body
-{
-        background-color:orange;
-	font-family:'Lucida Sans Unicode';
+#image_roll {
+	vertical-align:middle; 
+	margin-left:auto; 
+	margin-right:auto;
+	width:800px;
 }
-
-body h1 {
-	width: 500px;
-	margin-left: auto;
-	margin-right: auto;
-	border-radius:25px;
-	border-style:solid;
-	border-color:white;
-	border-width:10px;
-	background-color: black;
-	color: white;
-	text-align: center;	
-}
-
-#main{
-        width: 1000px;
-	min-height: 350px;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: black;    
-        border-radius:25px;
-	border-color:white;
-	border-width:10px;
-	border-style:solid;
-	color:white;
-	padding:25px;
-}
-
-#main h1{ 
-        color:white;
-}
-
-#main img{
-        display:inline;
-	border-radius:10px;
-	display: block; 
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#global_footer {
-		width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius:25px;
-        border-style:solid;
-        border-color:white;
-        border-width:10px;
-        background-color: black;
-        color: white;
-        text-align: center; 	
-}
-
-#global_footer a {
-		color: green;
-}
-/*Generic Classes*/
-.td-center      { text-align: center; }
-.center-div     { margin-left: auto; margin-right: auto; }
-

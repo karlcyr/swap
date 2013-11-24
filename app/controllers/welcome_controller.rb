@@ -1,4 +1,7 @@
 class WelcomeController < ApplicationController
+
   def index
-  end
+	@imageroll = Item.limit(10)
+  end	
+
 end

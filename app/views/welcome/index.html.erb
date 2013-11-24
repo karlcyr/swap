@@ -1,14 +1,15 @@
-<head>
-  <title>Hello jQuery/RoR world!</title>
-  <script type='text/javascript' src='jquery.min.js'></script>
-  <script type='text/javascript' src='welcome.js'></script>
-  <link href='hello.css' rel='stylesheet' type='text/css'>
-</head>
-<body>
+<h1>This is Swap City.</h1>
 
-        <h1>Jack is a silly boy</h1>
-
-	<div id="main">
-		<div><%= image_tag "jackanddad.png" %></div>
-	</div>
-</body>
+<div id="main">
+	<h2>Welcome!</h2>
+	<p>Swap City is the online marketplace for buying, selling, trading, renting and gifting stuff within your local community.</p>
+	<p>Inspirational mumbo jumbo goes here. Possibly images of happy people and cool stuff you want.</p>
+	<p>Yard sales are only fun when it's summertime. Make some extra cash off the things you have stuffed in the dark corners of your attic or find your next treasure from your neighbor's basement.</p>
+	<p>Time to start swapping!</p>
+	<div id="image_roll">
+	<h4>Latest public items for swap:</h4>
+		<% @imageroll.reverse_each do |item| %>
+			<%= image_tag item.item_image.url(:thumb), style: 'text-align:center; vertical-align:middle; display:inline-block' unless item.nil? %>
+		<% end %>
+	</div> 
+</div>

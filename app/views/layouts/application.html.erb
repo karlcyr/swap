@@ -7,17 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div id="auth_bar">
 <% if authenticated? %>
-	<div style="background-color:black; color:white; width:auto">welcome <%= current_user.email %>!</div>
+	welcome <%= current_user.nickname.strip %>! || <%= link_to "Logout", logout_path %>
+<% else %>
+	welcome guest. <%= link_to "Sign in now!", new_session_path %> 	
 <% end %>
- 
+</div>
 <%= yield %>
+
 <br>
-	<div id="global_footer" class='td-center'>
-		<%= link_to 'Home', welcome_index_path %> ||
-        <%= link_to "Item Directory", items_path %> ||
-		<%= link_to "Add New Item", new_item_path %> ||
-		<%= link_to "Sign up!", new_user_path %>
-	</div>
+<div id="global_footer" class='td-center'>
+	<%= link_to 'Home', welcome_index_path %> ||
+    <%= link_to 'Stuff to swap!', items_path %> ||
+	<% if authenticated? %>
+		My Inventory ||
+		<%= link_to "Add New Item", new_item_path %>  
+	<% else %>
+		<%= link_to "Sign up!", new_user_path %> 
+	<% end %>
+</div>
 </body>
 </html>
